@@ -19,6 +19,11 @@ describe('getNestedProperty', function () {
     expect(getNestedProperty(data, 'xxx')).toEqual(undefined);
   });
 
+  it('should get `undefined` on missing nested value', function () {
+    const data = {aaa: {bbb: 'ccc'}};
+    expect(getNestedProperty(data, 'aaa.xxx')).toEqual(undefined);
+  });
+
   it('should get `null` value', function () {
     const data = {aaa: null};
     expect(getNestedProperty(data, 'aaa')).toEqual(null);
