@@ -24,6 +24,11 @@ describe('getNestedProperty', function () {
     expect(getNestedProperty(data, 'aaa.xxx')).toEqual(undefined);
   });
 
+  it('should get `undefined` on missing path', function () {
+    const data = {};
+    expect(getNestedProperty(data, 'xxx.yyy')).toEqual(undefined);
+  });
+
   it('should get `null` value', function () {
     const data = {aaa: null};
     expect(getNestedProperty(data, 'aaa')).toEqual(null);

@@ -1,4 +1,3 @@
-
 /**
  * Returns nested property by path.
  * @param [data=window] Data object in which we will be looking for property.
@@ -18,7 +17,10 @@ export default function getNestedProperty (data = window, path = '') {
 
     if (path !== '') {
       path.split('.').forEach(function (segment) {
-        result = (result !== null && typeof result[segment] !== 'undefined')
+        result = (
+          typeof result !== 'undefined' &&
+          typeof result[segment] !== 'undefined'
+        )
           ? result[segment]
           : undefined;
       });
