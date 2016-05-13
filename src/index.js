@@ -13,20 +13,19 @@ export default function getNestedProperty (data = window, path = '') {
 
   if (typeof path === 'string') {
 
-    let result = data;
-
-    if (path !== '') {
-      path.split('.').forEach(function (segment) {
-        result = (
-          typeof result !== 'undefined' &&
-          typeof result[segment] !== 'undefined'
+    return path
+      .split('.')
+      .filter(function(segment) {
+        return segment.length > 0
+      })
+      .reduce(function(parent, segment) {
+        return (
+          typeof parent !== 'undefined' &&
+          typeof parent[segment] !== 'undefined'
         )
-          ? result[segment]
-          : undefined;
-      });
-    }
-
-    return result;
+          ? parent[segment]
+          : undefined
+      }, data)
 
   } else {
 
