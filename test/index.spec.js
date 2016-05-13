@@ -45,6 +45,21 @@ describe('getNestedProperty', function () {
     expect(getNestedProperty(data)).toEqual(data);
   });
 
+  it('should handle multiple consecutive dots as one', function () {
+    const data = {aaa: {bbb: 'ccc'}};
+    expect(getNestedProperty(data, 'aaa...bbb')).toEqual('ccc');
+  });
+
+  it('should ignore leading dot', function () {
+    const data = {aaa: 'bbb'};
+    expect(getNestedProperty(data, '.aaa')).toEqual('bbb');
+  });
+
+  it('should ignore trailing dot', function () {
+    const data = {aaa: 'bbb'};
+    expect(getNestedProperty(data, 'aaa.')).toEqual('bbb');
+  });
+
   it('should throw an error if path is not a string', function () {
     const fn = function () {getNestedProperty({}, [])};
     expect(fn).toThrow();
