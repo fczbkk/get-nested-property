@@ -1,3 +1,13 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/fczbkk/get-nested-property/compare/v1.0.1...v1.1.0) (2016-05-17)
+
+
+### Features
+
+* add `default_value` parameter ([4538810](https://github.com/fczbkk/get-nested-property/commit/4538810))
+
+
+
 <a name="1.0.1"></a>
 ## [1.0.1](https://github.com/fczbkk/get-nested-property/compare/v1.0.0...v1.0.1) (2016-05-13)
 
