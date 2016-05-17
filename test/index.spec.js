@@ -50,4 +50,8 @@ describe('getNestedProperty', function () {
     expect(fn).toThrow();
   });
 
+  it('should return optional default value', function () {
+    expect(getNestedProperty({}, 'xxx', 'aaa')).toEqual('aaa');
+  });
+
 });
