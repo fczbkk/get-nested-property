@@ -1,3 +1,13 @@
+<a name="1.1.1"></a>
+## [1.1.1](https://github.com/fczbkk/get-nested-property/compare/v1.1.0...v1.1.1) (2016-05-26)
+
+
+### Bug Fixes
+
+* add `.babelrc` to `.npmignore` ([0a9d7a6](https://github.com/fczbkk/get-nested-property/commit/0a9d7a6))
+
+
+
 <a name="1.1.0"></a>
 # [1.1.0](https://github.com/fczbkk/get-nested-property/compare/v1.0.1...v1.1.0) (2016-05-17)
 
