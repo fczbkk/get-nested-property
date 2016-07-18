@@ -8,10 +8,26 @@ describe('getNestedProperty', function () {
     expect(getNestedProperty(data, 'aaa')).toEqual('bbb');
   });
 
-  it('should get deep referenced value', function () {
+  it('should get deep referenced value via dot notation', function () {
     const data = {aaa: {bbb: 'ccc'}};
     expect(getNestedProperty(data, 'aaa')).toEqual({bbb: 'ccc'});
     expect(getNestedProperty(data, 'aaa.bbb')).toEqual('ccc');
+  });
+
+  it('should get deep referenced value via array notation', function () {
+    const data = {aaa: {bbb: 'ccc'}};
+    expect(getNestedProperty(data, ['aaa', 'bbb'])).toEqual('ccc');
+  });
+
+  it('should get deep referenced value via combined notation', function () {
+    const data = {aaa: {bbb: {ccc: 'ddd'}}};
+    expect(getNestedProperty(data, ['aaa.bbb', 'ccc'])).toEqual('ddd');
+  });
+
+  it('should get deep referenced value via variables', function () {
+    const data = {aaa: {bbb: 'ccc'}};
+    const ddd = 'aaa', eee = 'bbb';
+    expect(getNestedProperty(data, [ddd, eee])).toEqual('ccc');
   });
 
   it('should get `undefined` on missing value', function () {
@@ -45,8 +61,16 @@ describe('getNestedProperty', function () {
     expect(getNestedProperty(data)).toEqual(data);
   });
 
-  it('should throw an error if path is not a string', function () {
-    const fn = function () {getNestedProperty({}, [])};
+  it('should throw an error if path is not a string or array', function () {
+    let fn;
+
+    fn = function () {getNestedProperty({}, '')};
+    expect(fn).not.toThrow();
+
+    fn = function () {getNestedProperty({}, [])};
+    expect(fn).not.toThrow();
+
+    fn = function () {getNestedProperty({}, null)};
     expect(fn).toThrow();
   });
 
