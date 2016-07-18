@@ -1,3 +1,13 @@
+<a name="1.2.0"></a>
+# [1.2.0](https://github.com/fczbkk/get-nested-property/compare/v1.1.1...v1.2.0) (2016-07-18)
+
+
+### Features
+
+* add array notation of path ([c28006e](https://github.com/fczbkk/get-nested-property/commit/c28006e))
+
+
+
 <a name="1.1.1"></a>
 ## [1.1.1](https://github.com/fczbkk/get-nested-property/compare/v1.1.0...v1.1.1) (2016-05-26)
 
