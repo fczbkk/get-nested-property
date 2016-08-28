@@ -1,3 +1,13 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/fczbkk/get-nested-property/compare/v1.2.0...v1.3.0) (2016-08-28)
+
+
+### Features
+
+* separate library and module ([8b941b5](https://github.com/fczbkk/get-nested-property/commit/8b941b5))
+
+
+
 <a name="1.2.0"></a>
 # [1.2.0](https://github.com/fczbkk/get-nested-property/compare/v1.1.1...v1.2.0) (2016-07-18)
 
