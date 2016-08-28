@@ -22,7 +22,7 @@ var webpack_config = {
     loaders: [
       {
         test: /\.js$/,
-        loaders: ['babel-loader']
+        loaders: ['babel-loader', 'eslint-loader']
       }
     ]
   }
