@@ -33,8 +33,7 @@
     "version": "npm run build && npm run doc && npm run changelog && git add -A",
     "doc": "documentation readme ./src/index.js -s 'Documentation'",
     "eslint": "eslint ./{src,test}/**/*.js",
-    "eslint:build": "npm run eslint -- --max-warnings 0",
-    "postinstall": "npm run compile"
+    "eslint:build": "npm run eslint -- --max-warnings 0"
   },
   "main": "lib/index.js",
   "module": "module/index.js",
