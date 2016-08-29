@@ -1,3 +1,13 @@
+<a name="1.3.1"></a>
+## [1.3.1](https://github.com/fczbkk/get-nested-property/compare/v1.3.0...v1.3.1) (2016-08-29)
+
+
+### Bug Fixes
+
+* fix publish workflow ([c97a0de](https://github.com/fczbkk/get-nested-property/commit/c97a0de))
+
+
+
 <a name="1.3.0"></a>
 # [1.3.0](https://github.com/fczbkk/get-nested-property/compare/v1.2.0...v1.3.0) (2016-08-28)
 
