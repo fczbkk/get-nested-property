@@ -1,5 +1,6 @@
 /**
  * Returns nested property by path.
+ * @name getNestedProperty
  * @param {Object} [data=window] Data object in which we will be looking for property.
  * @param {string|Array} [path=''] Dot separated path to the nested property inside object. If array is used, it will be merged together as a single path.
  * @param {*} [default_value] Returned if property at given path is not defined.

@@ -4,7 +4,7 @@ Get specific property of nested object, without the need for checking each step 
 
 ## Documentation
 
-### index
+### getNestedProperty
 
 Returns nested property by path.
 
