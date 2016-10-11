@@ -17,10 +17,9 @@
   },
   "homepage": "https://github.com/fczbkk/get-nested-property#readme",
   "scripts": {
-    "dev": "npm run test:dev & npm run sample",
+    "dev": "npm run test:dev",
     "test:dev": "npm run test -- --no-single-run --auto-watch",
     "test": "cross-env NODE_ENV=es5 karma start ./karma.conf.js",
-    "sample": "cross-env NODE_ENV=es5 webpack-dev-server --config ./webpack.sample.js",
     "cleanup": "rimraf temp lib module",
     "prebuild": "npm run eslint:build && npm run cleanup && npm run test",
     "build": "npm run compile",

@@ -1,4 +1,7 @@
-import getNestedProperty from './../src/';
+import {
+  getNestedProperty,
+  deleteNestedProperty
+} from './../src/';
 
 
 describe('getNestedProperty', function () {
@@ -76,6 +79,40 @@ describe('getNestedProperty', function () {
 
   it('should return optional default value', function () {
     expect(getNestedProperty({}, 'xxx', 'aaa')).toEqual('aaa');
+  });
+
+});
+
+describe('deleteNestedProperty', function () {
+
+  it('should delete shallow property', function () {
+    const data = {aaa: 'bbb', ccc: 'ddd'};
+    const result = deleteNestedProperty(data, 'aaa');
+    expect(result).toEqual({ccc: 'ddd'});
+  });
+
+  it('should delete property via dot notation', function () {
+    const data = {aaa: {bbb: 'ccc', ddd: 'eee'}, fff: 'ggg'};
+    const result = deleteNestedProperty(data, 'aaa.bbb');
+    expect(result).toEqual({aaa: {ddd: 'eee'}, fff: 'ggg'});
+  });
+
+  it('should delete property via array notation', function () {
+    const data = {aaa: {bbb: 'ccc', ddd: 'eee'}, fff: 'ggg'};
+    const result = deleteNestedProperty(data, ['aaa', 'bbb']);
+    expect(result).toEqual({aaa: {ddd: 'eee'}, fff: 'ggg'});
+  });
+
+  it('should delete property via combined notation', function () {
+    const data = {aaa: {bbb: {ccc: 'ddd', eee: 'fff'}}};
+    const result = deleteNestedProperty(data, ['aaa', 'bbb.ccc']);
+    expect(result).toEqual({aaa: {bbb: {eee: 'fff'}}});
+  });
+
+  it('should ignore non-existing property', function () {
+    const data = {aaa: 'bbb'};
+    const result = deleteNestedProperty(data, 'xxx');
+    expect(result).toEqual({aaa: 'bbb'});
   });
 
 });
