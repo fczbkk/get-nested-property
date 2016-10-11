@@ -1,3 +1,13 @@
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/fczbkk/get-nested-property/compare/v1.3.1...v1.4.0) (2016-10-11)
+
+
+### Features
+
+* add `deleteNestedProperty()` ([2475a65](https://github.com/fczbkk/get-nested-property/commit/2475a65))
+
+
+
 <a name="1.3.1"></a>
 ## [1.3.1](https://github.com/fczbkk/get-nested-property/compare/v1.3.0...v1.3.1) (2016-08-29)
 
