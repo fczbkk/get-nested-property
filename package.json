@@ -1,6 +1,6 @@
 {
   "name": "get-nested-property",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Get specific property of nested object, without the need for checking each step separately.",
   "repository": {
     "type": "git",

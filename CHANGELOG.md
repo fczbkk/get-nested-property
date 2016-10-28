@@ -1,3 +1,13 @@
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/fczbkk/get-nested-property/compare/v1.4.0...v1.4.1) (2016-10-28)
+
+
+### Bug Fixes
+
+* do not throw if `null` is used as data parameter ([85ccb53](https://github.com/fczbkk/get-nested-property/commit/85ccb53))
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/fczbkk/get-nested-property/compare/v1.3.1...v1.4.0) (2016-10-11)
 
