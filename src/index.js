@@ -16,6 +16,11 @@ export function getNestedProperty (
   path = '',
   default_value
 ) {
+  // `null` can't be checked for properties, so let's skip right to default
+  if (data === null) {
+    return default_value;
+  }
+
   let result = data;
 
   path = sanitizePropertyPath(path, 'getNestedProperty');

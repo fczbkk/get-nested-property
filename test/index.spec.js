@@ -11,6 +11,14 @@ describe('getNestedProperty', function () {
     expect(getNestedProperty(data, 'aaa')).toEqual('bbb');
   });
 
+  it('should not throw if data is `undefined`', function () {
+    expect(getNestedProperty(undefined, 'aaa')).toEqual(undefined);
+  });
+
+  it('should not throw if data is `null`', function () {
+    expect(getNestedProperty(null, 'aaa')).toEqual(undefined);
+  });
+
   it('should get deep referenced value via dot notation', function () {
     const data = {aaa: {bbb: 'ccc'}};
     expect(getNestedProperty(data, 'aaa')).toEqual({bbb: 'ccc'});
