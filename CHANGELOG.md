@@ -1,3 +1,13 @@
+<a name="1.4.2"></a>
+## [1.4.2](https://github.com/fczbkk/get-nested-property/compare/v1.4.1...v1.4.2) (2017-01-16)
+
+
+### Bug Fixes
+
+* do not throw when encounter `null` along the path ([de85d68](https://github.com/fczbkk/get-nested-property/commit/de85d68))
+
+
+
 <a name="1.4.1"></a>
 ## [1.4.1](https://github.com/fczbkk/get-nested-property/compare/v1.4.0...v1.4.1) (2016-10-28)
 
