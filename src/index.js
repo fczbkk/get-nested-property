@@ -24,15 +24,22 @@ export function getNestedProperty (
   let result = data;
 
   path = sanitizePropertyPath(path, 'getNestedProperty');
-  if (path.length > 0) {
-    path.forEach(function (segment) {
-      result = (
-        typeof result !== 'undefined' &&
-        typeof result[segment] !== 'undefined'
-      )
-        ? result[segment]
-        : undefined;
-    });
+  for (let i = 0; i < path.length; i++) {
+    const segment = path[i];
+    const is_last_item = i === path.length - 1;
+
+    // we can not ask for properties of `null`, so let's stop the cycle
+    if (!is_last_item && result[segment] === null) {
+      result = undefined;
+      break;
+    }
+
+    result = (
+      typeof result !== 'undefined' &&
+      typeof result[segment] !== 'undefined'
+    )
+      ? result[segment]
+      : undefined;
   }
 
   return (typeof result === 'undefined') ? default_value : result;

@@ -89,6 +89,33 @@ describe('getNestedProperty', function () {
     expect(getNestedProperty({}, 'xxx', 'aaa')).toEqual('aaa');
   });
 
+  it('should allow to invoke returned value', function () {
+    const fn = function () {
+      getNestedProperty(window, 'getComputedStyle')();
+    };
+    expect(fn).not.toThrow();
+  });
+
+  it('should allow to invoke fallback value', function () {
+    const fallback_fn = function () {};
+    const fn = function () {
+      getNestedProperty(window, 'xxx', fallback_fn)();
+    };
+    expect(fn).not.toThrow();
+  });
+
+  it('should not throw when encountering `null` within path', function () {
+    const fn = function () {
+      getNestedProperty({aaa: null}, 'aaa.bbb');
+    };
+    expect(fn).not.toThrow();
+  });
+
+  it('should return `undefined` when encountering `null` within path', function () {
+    const result = getNestedProperty({aaa: null}, 'aaa.bbb');
+    expect(result).toEqual(undefined);
+  });
+
 });
 
 describe('deleteNestedProperty', function () {
