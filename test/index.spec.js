@@ -106,14 +106,38 @@ describe('getNestedProperty', function () {
 
   it('should not throw when encountering `null` within path', function () {
     const fn = function () {
-      getNestedProperty({aaa: null}, 'aaa.bbb');
+      getNestedProperty({aaa: null}, 'aaa.bbb.ccc');
     };
     expect(fn).not.toThrow();
   });
 
-  it('should return `undefined` when encountering `null` within path', function () {
-    const result = getNestedProperty({aaa: null}, 'aaa.bbb');
+  it('should return `undefined` when encountering `undefined` within path', function () {
+    const result = getNestedProperty({aaa: undefined}, 'aaa.bbb.ccc');
     expect(result).toEqual(undefined);
+  });
+
+  it('should not throw when encountering `null` within path', function () {
+    const fn = function () {
+      getNestedProperty({aaa: null}, 'aaa.bbb.ccc');
+    };
+    expect(fn).not.toThrow();
+  });
+
+  it('should return `undefined` when encountering `undefined` within path', function () {
+    const result = getNestedProperty({aaa: undefined}, 'aaa.bbb.ccc');
+    expect(result).toEqual(undefined);
+  });
+
+  it('should not throw when input object is `undefined`', function () {
+    const result = getNestedProperty(undefined, 'aaa.bbb.ccc');
+    expect(result).toEqual(undefined);
+  });
+
+  it('should return `undefined` when input object is `undefined`', function () {
+    const fn = function () {
+      getNestedProperty(undefined, 'aaa');
+    };
+    expect(fn).not.toThrow();
   });
 
 });
