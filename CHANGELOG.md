@@ -1,3 +1,13 @@
+<a name="1.4.3"></a>
+## [1.4.3](https://github.com/fczbkk/get-nested-property/compare/v1.4.2...v1.4.3) (2017-01-17)
+
+
+### Bug Fixes
+
+* prevent errors when encountering objects without properties ([ed121e1](https://github.com/fczbkk/get-nested-property/commit/ed121e1))
+
+
+
 <a name="1.4.2"></a>
 ## [1.4.2](https://github.com/fczbkk/get-nested-property/compare/v1.4.1...v1.4.2) (2017-01-16)
 

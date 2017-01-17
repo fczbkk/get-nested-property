@@ -43,6 +43,17 @@ deleteNestedProperty(data, ['aaa', 'bbb']);  // --> {aaa: {ddd: 'eee'}}
 
 Returns **Any** Original object with removed property.
 
+### getPropertyOf
+
+Returns property of source object, if possible. Otherwise returns `undefined`.
+
+**Parameters**
+
+-   `source_object` **\[Any]** 
+-   `property_id` **\[Any]** 
+
+Returns **Any** 
+
 ## Bug reports, feature requests and contact
 
 If you found any bugs, if you have feature requests or any questions, please, either [file an issue at GitHub](https://github.com/fczbkk/get-nested-property/issues) or send me an e-mail at <a href="mailto:riki@fczbkk.com">riki@fczbkk.com</a>.
